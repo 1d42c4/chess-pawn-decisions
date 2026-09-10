@@ -1,0 +1,71 @@
+[Event "Think Before Moving a Pawn / 05.1A"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "05.1"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "2b2rk1/pp3ppp/3p1n2/4p3/3PP3/3B1N2/PP3PPP/R5K1 w - - 0 1"]
+[SetUp "1"]
+
+{ A pawn move changes the squares it attacks forever. Before advancing, inspect its new support and the squares or pieces that depended on its old location. } 1. d5 a6 { Illustrative line. After d5, White gains space and fixes the central pawns. The black knight cannot win the d5-pawn for free: ...Nxd5 would allow exd5, exchanging a knight for a pawn. The illustrative ...a6 leaves the supported center intact. This is a structural example, not a claim that d5 is best in every similar position. White has also closed lines and given up the option of keeping the central tension with d4 against e5. } *
+
+[Event "Think Before Moving a Pawn / 05.1B"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "05.1"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "2b2rk1/pp3ppp/3p1n2/4p3/3P4/3BPN2/PP3PPP/R5K1 w - - 0 1"]
+[SetUp "1"]
+
+{ Exercise. Try the questions in the book before reading this line. } 1. Bc2 { Illustrative line. The e-pawn is on e3. From there it attacks d4 and f4, so it supports the pawn only while that pawn remains on d4. After d5, ...Nxd5 wins the pawn. White's e3-pawn cannot recapture on d5, and neither the bishop on d3 nor knight on f3 attacks d5. Bc2 moves the bishop off d3, so ...e4 would no longer attack both bishop and knight. The e3-pawn continues to support d4. A full decision would also compare central captures; the essential answer is why this position calls for care before the unsupported d5 advance. } ( 1. d5 { Alternative for comparison; read the explanation before treating it as a recommendation. } 1... Nxd5 ) *
+
+[Event "Think Before Moving a Pawn / 05.2A"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "05.2"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3"]
+[SetUp "1"]
+
+{ A pawn break challenges an enemy pawn structure. Attacking the support of an advanced pawn can be more practical than attacking that advanced pawn directly. } 3... c5 4. c3 Nc6 { Illustrative line. ...c5 challenges d4. White often reinforces with c3, and ...Nc6 adds another attacker to d4. Both sides have a clear job: Black increases pressure; White maintains the support of e5. The break is not a promise to win a pawn immediately. White can defend, exchange, or change the center. Black should calculate what remains after each exchange and coordinate pieces with that structure. } *
+
+[Event "Think Before Moving a Pawn / 05.2B"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "05.2"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5"]
+[SetUp "1"]
+
+{ Exercise. Try the questions in the book before reading this line. } 5... cxd4 6. cxd4 { Illustrative line. White's c3-pawn can play cxd4. The original white d-pawn disappears, but the c-pawn takes its place on d4. No. A white pawn on d4 attacks e5 regardless of which file it started on. The chain d4-e5 still exists after the exchange. The c-file has lost both c-pawns, creating an open file, and the identity and future flexibility of the center have changed. Black must plan for the resulting position instead of claiming the base was simply removed. } *
+
+[Event "Think Before Moving a Pawn / 05.3A"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "05.3"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "8/p3k3/8/8/P7/1P6/4K3/8 w - - 0 1"]
+[SetUp "1"]
+
+{ A pawn majority can create a passed pawn, but a passer is an asset rather than a result. Count the opposing king's route and any counter-pawn race. } 1. b4 a6 2. b5 axb5 3. axb5 { Illustrative line. The illustrative sequence b4 ...a6 b5 ...axb5 axb5 leaves White with a passed b-pawn: no black pawn remains on the a-, b- or c-file to stop it. That line demonstrates creation, not a forced win. Black could choose different moves, and this starting position is a tablebase draw with best play. To win a pawn ending you must also defeat the king's blockade; counting a two-to-one majority is not enough. } *
+
+[Event "Think Before Moving a Pawn / 05.3B"]
+[Site "Original teaching position"]
+[Date "2026.09.10"]
+[Round "05.3"]
+[White "White"]
+[Black "Black"]
+[Result "*"]
+[FEN "8/6k1/p7/P7/1P6/8/4K3/8 w - - 0 1"]
+[SetUp "1"]
+
+{ Exercise. Try the questions in the book before reading this line. } 1. b5 axb5 2. a6 Kf7 3. a7 Ke7 4. a8=Q { Illustrative line. b5 offers the b-pawn to divert Black's a6-pawn away from the a-file. White's a5-pawn can then become a passer. The a5-pawn cannot capture a black pawn on b5: a white pawn captures diagonally to b6. Instead a6 starts a fast race, followed by a7 and a8=Q. After ...axb5 a6 ...Kf7 a7 ...Ke7 a8=Q, White promotes before Black's king arrives. Black can decline the capture, but the exact starting position with the king on g7 is still a tablebase win for White. The distant king is a decisive detail; Model A is only a draw. } *

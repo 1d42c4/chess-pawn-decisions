@@ -1,0 +1,362 @@
+{
+  "number": 5,
+  "slug": "chess-pawn-decisions",
+  "title": "Think Before Moving a Pawn",
+  "goal": "Track the squares a pawn gains, the support it leaves, and the position after exchanges.",
+  "lessons": [
+    {
+      "id": "05.1",
+      "title": "Will the pawn still be supported?",
+      "idea": "A pawn move changes the squares it attacks forever. Before advancing, inspect its new support and the squares or pieces that depended on its old location.",
+      "facts": [
+        "White's e4-pawn attacks d5, so it can support a pawn that advances there.",
+        "Black's knight on f6 also attacks d5.",
+        "White's bishop on d3 protects e4, helping maintain the supporting pawn."
+      ],
+      "explain": [
+        "After d5, White gains space and fixes the central pawns. The black knight cannot win the d5-pawn for free: ...Nxd5 would allow exd5, exchanging a knight for a pawn.",
+        "The illustrative ...a6 leaves the supported center intact. This is a structural example, not a claim that d5 is best in every similar position. White has also closed lines and given up the option of keeping the central tension with d4 against e5."
+      ],
+      "caution": "Support is specific to the new square. A pawn on e3 protects d4, but it does not protect d5. Count the defenders after the advance, not before it.",
+      "questions": [
+        "Which pawn changed, and which square does it now defend?",
+        "Calculate d5 through Black's simplest capture.",
+        "Give a bishop move that keeps the pawn chain and avoids a possible ...e4 fork of bishop and knight."
+      ],
+      "answers": [
+        "The e-pawn is on e3. From there it attacks d4 and f4, so it supports the pawn only while that pawn remains on d4.",
+        "After d5, ...Nxd5 wins the pawn. White's e3-pawn cannot recapture on d5, and neither the bishop on d3 nor knight on f3 attacks d5.",
+        "Bc2 moves the bishop off d3, so ...e4 would no longer attack both bishop and knight. The e3-pawn continues to support d4. A full decision would also compare central captures; the essential answer is why this position calls for care before the unsupported d5 advance."
+      ],
+      "transfer": "Before your next five pawn moves, name the square the pawn stops defending and the piece that will defend its destination. Review any move for which you could not answer.",
+      "recall": [
+        "Why is d5 supported with a pawn on e4 but not with one on e3?",
+        "The e4-pawn attacks d5 diagonally; the e3-pawn attacks d4 instead."
+      ],
+      "positions": {
+        "A": {
+          "fen": "2b2rk1/pp3ppp/3p1n2/4p3/3PP3/3B1N2/PP3PPP/R5K1 w - - 0 1",
+          "opening_moves": "",
+          "line": "d5 a6",
+          "alternative": "",
+          "purpose": "candidate",
+          "validation": {
+            "id": "05.1A",
+            "title": "Will the pawn still be supported?",
+            "fen": "2b2rk1/pp3ppp/3p1n2/4p3/3PP3/3B1N2/PP3PPP/R5K1 w - - 0 1",
+            "line": "d5 a6",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "dxe5",
+                "score": "+196",
+                "depth": 18
+              },
+              {
+                "san": "Re1",
+                "score": "+73",
+                "depth": 18
+              },
+              {
+                "san": "Rc1",
+                "score": "+39",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+13"
+          }
+        },
+        "B": {
+          "fen": "2b2rk1/pp3ppp/3p1n2/4p3/3P4/3BPN2/PP3PPP/R5K1 w - - 0 1",
+          "opening_moves": "",
+          "line": "Bc2",
+          "alternative": "d5 Nxd5",
+          "purpose": "candidate",
+          "validation": {
+            "id": "05.1B",
+            "title": "Will the pawn still be supported?",
+            "fen": "2b2rk1/pp3ppp/3p1n2/4p3/3P4/3BPN2/PP3PPP/R5K1 w - - 0 1",
+            "line": "Bc2",
+            "bad": "d5 Nxd5",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "dxe5",
+                "score": "+208",
+                "depth": 18
+              },
+              {
+                "san": "Bc2",
+                "score": "+28",
+                "depth": 18
+              },
+              {
+                "san": "Be2",
+                "score": "+21",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+33"
+          }
+        }
+      }
+    },
+    {
+      "id": "05.2",
+      "title": "Aim the break at a supporting pawn",
+      "idea": "A pawn break challenges an enemy pawn structure. Attacking the support of an advanced pawn can be more practical than attacking that advanced pawn directly.",
+      "facts": [
+        "White's d4-pawn supports the advanced pawn on e5.",
+        "Black can advance the c7-pawn two squares to c5 because both intervening and destination squares are clear.",
+        "A pawn on c5 attacks d4, the base of White's central chain."
+      ],
+      "explain": [
+        "...c5 challenges d4. White often reinforces with c3, and ...Nc6 adds another attacker to d4. Both sides have a clear job: Black increases pressure; White maintains the support of e5.",
+        "The break is not a promise to win a pawn immediately. White can defend, exchange, or change the center. Black should calculate what remains after each exchange and coordinate pieces with that structure."
+      ],
+      "caution": "Trading a pawn off its original square does not always destroy the structure. A recapturing pawn may replace it and keep the same supporting relationship.",
+      "questions": [
+        "After ...cxd4, which white pawn can recapture on d4?",
+        "Does that recapture leave the e5-pawn unsupported?",
+        "What has changed even though the central chain remains?"
+      ],
+      "answers": [
+        "White's c3-pawn can play cxd4. The original white d-pawn disappears, but the c-pawn takes its place on d4.",
+        "No. A white pawn on d4 attacks e5 regardless of which file it started on. The chain d4-e5 still exists after the exchange.",
+        "The c-file has lost both c-pawns, creating an open file, and the identity and future flexibility of the center have changed. Black must plan for the resulting position instead of claiming the base was simply removed."
+      ],
+      "transfer": "Replay one pawn exchange from an opening you use. Freeze the board after all recaptures and describe the open files, pawn support and new targets.",
+      "recall": [
+        "Why can ...cxd4 fail to remove support from e5?",
+        "White can recapture cxd4, replacing the supporting pawn on d4."
+      ],
+      "positions": {
+        "A": {
+          "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+          "opening_moves": "e4 e6 d4 d5 e5",
+          "line": "c5 c3 Nc6",
+          "alternative": "",
+          "purpose": "candidate",
+          "validation": {
+            "id": "05.2A",
+            "title": "Aim the break at a supporting pawn",
+            "fen": "rnbqkbnr/ppp2ppp/4p3/3pP3/3P4/8/PPP2PPP/RNBQKBNR b KQkq - 0 3",
+            "line": "c5 c3 Nc6",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "c5",
+                "score": "-25",
+                "depth": 18
+              },
+              {
+                "san": "Bd7",
+                "score": "-28",
+                "depth": 18
+              },
+              {
+                "san": "Ne7",
+                "score": "-30",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "-22"
+          }
+        },
+        "B": {
+          "fen": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+          "opening_moves": "e4 e6 d4 d5 e5 c5 c3 Nc6 Nf3",
+          "line": "cxd4 cxd4",
+          "alternative": "",
+          "purpose": "comparison",
+          "validation": {
+            "id": "05.2B",
+            "title": "Aim the break at a supporting pawn",
+            "fen": "r1bqkbnr/pp3ppp/2n1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R b KQkq - 2 5",
+            "line": "cxd4 cxd4",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Qb6",
+                "score": "-21",
+                "depth": 18
+              },
+              {
+                "san": "Bd7",
+                "score": "-22",
+                "depth": 18
+              },
+              {
+                "san": "Nge7",
+                "score": "-43",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "-44"
+          }
+        }
+      }
+    },
+    {
+      "id": "05.3",
+      "title": "Create a passer, then count the race",
+      "idea": "A pawn majority can create a passed pawn, but a passer is an asset rather than a result. Count the opposing king's route and any counter-pawn race.",
+      "facts": [
+        "White has two queenside pawns against one.",
+        "The b-pawn can advance beside the a-pawn and offer an exchange.",
+        "Black's king is far from the queenside at the start, but can approach as the pawns move."
+      ],
+      "explain": [
+        "The illustrative sequence b4 ...a6 b5 ...axb5 axb5 leaves White with a passed b-pawn: no black pawn remains on the a-, b- or c-file to stop it.",
+        "That line demonstrates creation, not a forced win. Black could choose different moves, and this starting position is a tablebase draw with best play. To win a pawn ending you must also defeat the king's blockade; counting a two-to-one majority is not enough."
+      ],
+      "caution": "Do not assume the opponent will capture your offered pawn. Compare accepting the exchange with advancing the king or keeping the pawns locked. The defender chooses the most difficult reply.",
+      "questions": [
+        "What is the idea of b5 in this more advanced position?",
+        "After ...axb5, why is a6 stronger than trying to recapture?",
+        "Count the promotion race in the sample line. What must Black also consider besides accepting the pawn?"
+      ],
+      "answers": [
+        "b5 offers the b-pawn to divert Black's a6-pawn away from the a-file. White's a5-pawn can then become a passer.",
+        "The a5-pawn cannot capture a black pawn on b5: a white pawn captures diagonally to b6. Instead a6 starts a fast race, followed by a7 and a8=Q.",
+        "After ...axb5 a6 ...Kf7 a7 ...Ke7 a8=Q, White promotes before Black's king arrives. Black can decline the capture, but the exact starting position with the king on g7 is still a tablebase win for White. The distant king is a decisive detail; Model A is only a draw."
+      ],
+      "transfer": "Set up both diagrams and count moves for the pawn and defending king separately. Then play against a tablebase without assuming the defender accepts a pawn sacrifice.",
+      "recall": [
+        "What is the difference between creating a passer and winning?",
+        "A passed pawn has no opposing pawn blocker, but the king or a counter-race may still stop it."
+      ],
+      "positions": {
+        "A": {
+          "fen": "8/p3k3/8/8/P7/1P6/4K3/8 w - - 0 1",
+          "opening_moves": "",
+          "line": "b4 a6 b5 axb5 axb5",
+          "alternative": "",
+          "purpose": "structure",
+          "validation": {
+            "id": "05.3A",
+            "title": "Create a passer, then count the race",
+            "fen": "8/p3k3/8/8/P7/1P6/4K3/8 w - - 0 1",
+            "line": "b4 a6 b5 axb5 axb5",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Kd3",
+                "score": "+35",
+                "depth": 18
+              },
+              {
+                "san": "b4",
+                "score": "+35",
+                "depth": 18
+              },
+              {
+                "san": "Kd2",
+                "score": "+14",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+40",
+            "tablebase": "draw",
+            "tablebase_line": [
+              [
+                "b4",
+                "draw"
+              ],
+              [
+                "a6",
+                "win"
+              ],
+              [
+                "b5",
+                "draw"
+              ],
+              [
+                "axb5",
+                "draw"
+              ],
+              [
+                "axb5",
+                "draw"
+              ]
+            ]
+          }
+        },
+        "B": {
+          "fen": "8/6k1/p7/P7/1P6/8/4K3/8 w - - 0 1",
+          "opening_moves": "",
+          "line": "b5 axb5 a6 Kf7 a7 Ke7 a8=Q",
+          "alternative": "",
+          "purpose": "endgame",
+          "validation": {
+            "id": "05.3B",
+            "title": "Create a passer, then count the race",
+            "fen": "8/6k1/p7/P7/1P6/8/4K3/8 w - - 0 1",
+            "line": "b5 axb5 a6 Kf7 a7 Ke7 a8=Q",
+            "bad": "",
+            "checkmate": false,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "b5",
+                "score": "+1735",
+                "depth": 18
+              },
+              {
+                "san": "Kd3",
+                "score": "+1735",
+                "depth": 18
+              },
+              {
+                "san": "Ke3",
+                "score": "+1575",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "+1916",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "b5",
+                "win"
+              ],
+              [
+                "axb5",
+                "win"
+              ],
+              [
+                "a6",
+                "win"
+              ],
+              [
+                "Kf7",
+                "win"
+              ],
+              [
+                "a7",
+                "win"
+              ],
+              [
+                "Ke7",
+                "win"
+              ],
+              [
+                "a8=Q",
+                "win"
+              ]
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
